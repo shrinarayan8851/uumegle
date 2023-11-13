@@ -27,6 +27,12 @@ var server = app.listen(PORT, () => {
 });
 
 const io = require("socket.io")(server, {
+    cors: {
+        origin: `http://localhost:${PORT}`,
+        methods: ["GET", "POST"],
+        transports: ['websocket', 'polling'],
+        credentials: true
+    },
     allowEI03: true, //False by default
 });
 
