@@ -1,0 +1,213 @@
+html {
+    height: 100%;
+    font-family: 'Roboto', 'Lucida Sans', 'Lucida Grande', sans-serif;
+}
+
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex-basis: 10%;
+    box-shadow: 0px 0px 5px gray;
+}
+
+
+nav {
+    height: 100%;
+    padding: 0 10px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img.logo {
+    max-height: 50px;
+}
+
+.online-status {
+    font-size: 20px;
+    font-weight: bold;
+    color: skyblue;
+}
+
+main {
+    height: 100px;
+    margin: 10px;
+    padding: 0;
+    flex-basis: 90%;
+}
+
+.main-container {
+    padding: 20px 100px;
+
+}
+
+.monitered-text {
+    padding: 5px;
+    background-color: skyblue;
+    justify-content: center;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 20px 0;
+
+}
+
+
+.start-text {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.action-container {
+
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.button-container .action-button {
+    background: linear-gradient(to right, #5a65a3, #6880b3);
+    /* Replace these colors with your desired gradient */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+}
+
+.action-button a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* --------Video chat .............*/
+
+
+.video_chat_main_container {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    flex-basis: 90%;
+}
+
+.video_chat_container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.video-tag-container {
+    margin-top: 10px;
+    margin-right: 5px;
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.video-player {
+    flex-basis: 50%;
+}
+
+video {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: rgb(63, 62, 62);
+}
+
+
+/* --------chat .............*/
+
+
+.chat-container {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.chat-text-container {
+    flex-basis: 80%;
+}
+
+.next-chat-container {
+    margin-top: auto;
+    flex-basis: 20%;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.next-chat {
+    display: flex;
+    flex-basis: 15%;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 5px gray;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    pointer-events: none;
+
+}
+
+.type-message {
+    flex-basis: 70%;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 5px Igray;
+    height: auto;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+#msg-input {
+    width: 99%;
+    height: 91%;
+    outline: none;
+    border: 1px solid Lightgray;
+    padding: 5px;
+}
+
+.msg-send-button {
+    display: flex;
+    flex-basis: 15%;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 5px gray;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
