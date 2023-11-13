@@ -9,7 +9,10 @@ const app = express();
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
+
+app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "Assets"));
 
 app.use("/css", express.static(path.resolve(__dirname, "Assets/css")));
 app.use("/img", express.static(path.resolve(__dirname, "Assets/img")));
