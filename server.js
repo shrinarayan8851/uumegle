@@ -1,39 +1,34 @@
 const express = require("express");
 const path = require("path");
 const bodyparser = require("body-parser");
-
 const PORT = process.env.PORT || 8080;
 const app = express();
-
-
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
-app.set("views", __dirname + "/views");
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "Assets"));
+app.use(express.static(path.join(__dirname, "Assets")));
 
-app.use("/css", express.static(path.resolve(__dirname, "Assets/css")));
-app.use("/img", express.static(path.resolve(__dirname, "Assets/img")));
-app.use("/js", express.static(path.resolve(__dirname, "Assets/js")));
-
+app.use("/css", express.static(path.join(__dirname, "Assets/css")));
+app.use("/img", express.static(path.join(__dirname, "Assets/img")));
+app.use("/js", express.static(path.join(__dirname, "Assets/js")));
 
 app.use("/", require("./Server/routes/router"));
 
 var server = app.listen(PORT, () => {
-
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 const io = require("socket.io")(server, {
     cors: {
-        origin: `http://localhost:${PORT}`,
+        origin: "*", // Adjust this in production
         methods: ["GET", "POST"],
         transports: ['websocket', 'polling'],
         credentials: true
     },
-    allowEI03: true, //False by default
+    allowEIO3: true,
 });
 
 var userConnection = [];
@@ -48,10 +43,12 @@ io.on("connection", (socket) => {
         });
         var userCount = userConnection.length;
         console.log("UserCount", userCount);
-        console.log("UserCount", userCount);
-
-
     });
+
+
+
+
+
 
     socket.on("offerSendToRemote", (data) => {
         var offerReceiver = userConnection.find((o) => o.user_id === data.remoteUser);

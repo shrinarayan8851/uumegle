@@ -5,8 +5,9 @@ let remoteUser;
 let url = new URL(window.location.href);
 
 username = url.searchParams.get("username");
+alert(username);
 remoteUser = url.searchParams.get("remoteuser");
-
+alert(remoteUser);
 let peerConnection;
 let remoteStream;
 let sendChannel;
@@ -51,6 +52,11 @@ let servers = {
         },
     ],
 };
+
+
+
+
+
 
 let createPeerConnection = async () => {
 
@@ -164,7 +170,7 @@ let createOffer = async () => {
 
 
 let createAnswer = async (data) => {
-    remoteUser = data.remoteUser
+    remoteUser = data.username;
     createPeerConnection();
     await peerConnection.setRemoteDescription(data.offer);
     let answer = await peerConnection.createAnswer();
